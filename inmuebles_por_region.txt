@@ -1,0 +1,22 @@
+Region: Arica y Parinacota
+Region: Tarapacá
+Region: Antofagasta
+Region: Atacama
+Region: Coquimbo
+Region: Valparaíso
+Region: Metropolitana de Santiago
+           Nombre: Casa 2
+           Descripción: Casita
+--------------------------------------------
+           Nombre: casa
+           Descripción: lopesa
+--------------------------------------------
+Region: Libertador Gral. Bernardo O’Higgins
+Region: Maule
+Region: Ñuble
+Region: Biobío
+Region: Araucanía
+Region: Los Ríos
+Region: Los Lagos
+Region: Aisén del Gral. Carlos Ibáñez del Campo
+Region: Magallanes y de la Antártica Chilena

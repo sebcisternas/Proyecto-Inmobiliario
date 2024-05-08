@@ -1,0 +1,107 @@
+[
+  {
+    "model": "inmobilapp.usuario",
+    "pk": 2,
+    "fields": {
+      "nombres": "Sebastian",
+      "apellidos": "Cisternas",
+      "rut": "172706959",
+      "direccion": "navidad",
+      "telefono": "974729527",
+      "tipo_usuario": "arrendatario",
+      "correo_electronico": "correo@correo.cl"
+    }
+  },
+  {
+    "model": "inmobilapp.usuario",
+    "pk": 3,
+    "fields": {
+      "nombres": "valentina",
+      "apellidos": "cisternas",
+      "rut": "81268401",
+      "direccion": "navidad 1111",
+      "telefono": "971299072",
+      "tipo_usuario": "arrendador",
+      "correo_electronico": "correo@correee.cl"
+    }
+  },
+  {
+    "model": "inmobilapp.usuario",
+    "pk": 4,
+    "fields": {
+      "nombres": "Sebastian",
+      "apellidos": "Ocaranza",
+      "rut": "167104967",
+      "direccion": "navidad 1838",
+      "telefono": "974788596",
+      "tipo_usuario": "arrendatario",
+      "correo_electronico": "correo@correolo.cl"
+    }
+  },
+  {
+    "model": "inmobilapp.usuario",
+    "pk": 5,
+    "fields": {
+      "nombres": "Gerardo",
+      "apellidos": "González",
+      "rut": "205829017",
+      "direccion": "Santiago",
+      "telefono": "977654321",
+      "tipo_usuario": "arrendador",
+      "correo_electronico": "gerardo@example.com"
+    }
+  },
+  {
+    "model": "inmobilapp.usuario",
+    "pk": 6,
+    "fields": {
+      "nombres": "Pedro",
+      "apellidos": "Pérez",
+      "rut": "196754321",
+      "direccion": "Valparaíso",
+      "telefono": "976543210",
+      "tipo_usuario": "arrendatario",
+      "correo_electronico": "pedro@example.com"
+    }
+  },
+  {
+    "model": "inmobilapp.usuario",
+    "pk": 7,
+    "fields": {
+      "nombres": "Juan",
+      "apellidos": "Martínez",
+      "rut": "218765432",
+      "direccion": "Concepción",
+      "telefono": "978765432",
+      "tipo_usuario": "arrendatario",
+      "correo_electronico": "juan@example.com"
+    }
+  },
+  {
+    "model": "inmobilapp.usuario",
+    "pk": 8,
+    "fields": {
+      "nombres": "Constanza",
+      "apellidos": "López",
+      "rut": "197654321",
+      "direccion": "La Serena",
+      "telefono": "979876543",
+      "tipo_usuario": "arrendador",
+      "correo_electronico": "connie@example.com"
+    }
+  },
+  {
+    "model": "inmobilapp.usuario",
+    "pk": 9,
+    "fields": {
+      "nombres": "Paola",
+      "apellidos": "Hernández",
+      "rut": "209876543",
+      "direccion": "Arica",
+      "telefono": "979876543",
+      "tipo_usuario": "arrendatario",
+      "correo_electronico": "paola@example.com"
+    }
+  }
+  
+]

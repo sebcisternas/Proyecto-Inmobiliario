@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -33,6 +34,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = 'index'
+LOGIN_URL = 'login'  # URL a la que se redirige si un usuario no está autenticado y trata de acceder a una vista protegida
+LOGOUT_URL = 'logout' 
 
 # Application definition
 
@@ -126,7 +130,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = 'media'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'inmobilapp/static'),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

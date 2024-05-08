@@ -16,7 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from inmobilapp.views import registro_usuario,index,detalle_inmueble,generar_solicitud_arriendo,solicitudes_arrendador,alta_inmueble
+from django.contrib.auth.views import LoginView, LogoutView
+from django.conf.urls.static import static
+
+from proyectofinal import settings 
 
 urlpatterns = [
+    path('', index, name='index'),
     path('admin/', admin.site.urls),
+    path('registro/', registro_usuario, name='registro_usuario'),
+    path('login/', LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', LogoutView.as_view(next_page='index'), name='logout'),
+    path('inmueble/<int:id>',detalle_inmueble , name='detalle'),
+    
+    path('inmuebles/<int:id>/generar-solicitud/', generar_solicitud_arriendo, name='generar_solicitud_arriendo'),
+    path('solicitudes/', solicitudes_arrendador, name='solicitudes_arrendador'),
+    path('alta-inmueble/', alta_inmueble, name='alta_inmueble'),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

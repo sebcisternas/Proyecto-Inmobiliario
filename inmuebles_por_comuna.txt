@@ -1,0 +1,352 @@
+Comuna: Arica
+Comuna: Camarones
+Comuna: General Lagos
+Comuna: Putre
+Comuna: Alto Hospicio
+Comuna: Camiña
+Comuna: Colchane
+Comuna: Huara
+Comuna: Iquique
+Comuna: Pica
+Comuna: Pozo Almonte
+Comuna: Antofagasta
+Comuna: Calama
+Comuna: María Elena
+Comuna: Mejillones
+Comuna: Ollagüe
+Comuna: San Pedro de Atacama
+Comuna: Sierra Gorda
+Comuna: Taltal
+Comuna: Tocopilla
+Comuna: Alto del Carmen
+Comuna: Caldera
+Comuna: Chañaral
+Comuna: Copiapó
+Comuna: Diego de Almagro
+Comuna: Freirina
+Comuna: Huasco
+Comuna: Tierra Amarilla
+Comuna: Vallenar
+Comuna: Andacollo
+Comuna: Canela
+Comuna: Combarbalá
+Comuna: Coquimbo
+Comuna: Illapel
+Comuna: La Higuera
+Comuna: La Serena
+Comuna: Los Vilos
+Comuna: Monte Patria
+Comuna: Ovalle
+Comuna: Paiguano
+Comuna: Punitaqui
+Comuna: Río Hurtado
+Comuna: Salamanca
+Comuna: Vicuña
+Comuna: Algarrobo
+Comuna: Cabildo
+Comuna: Calera
+Comuna: Calle Larga
+Comuna: Cartagena
+Comuna: Casablanca
+Comuna: Catemu
+Comuna: Concón
+Comuna: El Quisco
+Comuna: El Tabo
+Comuna: Hijuelas
+Comuna: Isla de Pascua
+Comuna: Juan Fernández
+Comuna: La Cruz
+Comuna: La Ligua
+Comuna: Limache
+Comuna: Llaillay
+Comuna: Los Andes
+Comuna: Nogales
+Comuna: Olmué
+Comuna: Panquehue
+Comuna: Papudo
+Comuna: Petorca
+Comuna: Puchuncaví
+Comuna: Putaendo
+Comuna: Quillota
+Comuna: Quilpué
+Comuna: Quintero
+Comuna: Rinconada
+Comuna: San Antonio
+Comuna: San Esteban
+Comuna: San Felipe
+Comuna: Santa María
+Comuna: Santo Domingo
+Comuna: Valparaíso
+Comuna: Villa Alemana
+Comuna: Viña del Mar
+Comuna: Zapallar
+Comuna: Alhué
+Comuna: Buin
+Comuna: Calera de Tango
+Comuna: Cerrillos
+Comuna: Cerro Navia
+Comuna: Colina
+Comuna: Conchalí
+Comuna: Curacaví
+Comuna: El Bosque
+Comuna: El Monte
+Comuna: Estación Central
+Comuna: Huechuraba
+Comuna: Independencia
+Comuna: Isla de Maipo
+Comuna: La Cisterna
+Comuna: La Florida
+Comuna: La Granja
+Comuna: La Pintana
+Comuna: La Reina
+Comuna: Lampa
+Comuna: Las Condes
+Comuna: Lo Barnechea
+Comuna: Lo Espejo
+Comuna: Lo Prado
+Comuna: Macul
+Comuna: Maipú
+Comuna: María Pinto
+Comuna: Melipilla
+Comuna: Ñuñoa
+Comuna: Padre Hurtado
+           Nombre: Casa 2
+           Descripción: Casita
+--------------------------------------------
+Comuna: Paine
+Comuna: Pedro Aguirre Cerda
+Comuna: Peñaflor
+Comuna: Peñalolén
+Comuna: Pirque
+Comuna: Providencia
+           Nombre: casa
+           Descripción: lopesa
+--------------------------------------------
+Comuna: Pudahuel
+Comuna: Puente Alto
+Comuna: Quilicura
+Comuna: Quinta Normal
+Comuna: Recoleta
+Comuna: Renca
+Comuna: San Bernardo
+Comuna: San Joaquín
+Comuna: San José de Maipo
+Comuna: San Miguel
+Comuna: San Pedro
+Comuna: San Ramón
+Comuna: Santiago
+Comuna: Talagante
+Comuna: Tiltil
+Comuna: Vitacura
+Comuna: Chimbarongo
+Comuna: Chépica
+Comuna: Codegua
+Comuna: Coinco
+Comuna: Coltauco
+Comuna: Doñihue
+Comuna: Graneros
+Comuna: La Estrella
+Comuna: Las Cabras
+Comuna: Litueche
+Comuna: Lolol
+Comuna: Machalí
+Comuna: Malloa
+Comuna: Marchihue
+Comuna: Nancagua
+Comuna: Navidad
+Comuna: Olivar
+Comuna: Palmilla
+Comuna: Paredones
+Comuna: Peralillo
+Comuna: Peumo
+Comuna: Pichidegua
+Comuna: Pichilemu
+Comuna: Placilla
+Comuna: Pumanque
+Comuna: Quinta de Tilcoco
+Comuna: Rancagua
+Comuna: Rengo
+Comuna: Requínoa
+Comuna: San Fernando
+Comuna: San Francisco de Mostazal
+Comuna: San Vicente de Tagua Tagua
+Comuna: Santa Cruz
+Comuna: Cauquenes
+Comuna: Chanco
+Comuna: Colbún
+Comuna: Constitución
+Comuna: Curepto
+Comuna: Curicó
+Comuna: Empedrado
+Comuna: Hualañé
+Comuna: Licantén
+Comuna: Linares
+Comuna: Longaví
+Comuna: Maule
+Comuna: Molina
+Comuna: Parral
+Comuna: Pelarco
+Comuna: Pelluhue
+Comuna: Pencahue
+Comuna: Rauco
+Comuna: Retiro
+Comuna: Romeral
+Comuna: Río Claro
+Comuna: Sagrada Familia
+Comuna: San Clemente
+Comuna: San Javier de Loncomilla
+Comuna: San Rafael
+Comuna: Talca
+Comuna: Teno
+Comuna: Vichuquén
+Comuna: Villa Alegre
+Comuna: Yerbas Buenas
+Comuna: Bulnes
+Comuna: Chillán Viejo
+Comuna: Chillán
+Comuna: Cobquecura
+Comuna: Coelemu
+Comuna: Coihueco
+Comuna: El Carmen
+Comuna: Ninhue
+Comuna: Ñiquén
+Comuna: Pemuco
+Comuna: Pinto
+Comuna: Portezuelo
+Comuna: Quillón
+Comuna: Quirihue
+Comuna: Ránquil
+Comuna: San Carlos
+Comuna: San Fabián
+Comuna: San Ignacio
+Comuna: San Nicolás
+Comuna: Treguaco
+Comuna: Yungay
+Comuna: Alto Biobío
+Comuna: Antuco
+Comuna: Arauco
+Comuna: Cabrero
+Comuna: Cañete
+Comuna: Chiguayante
+Comuna: Concepción
+Comuna: Contulmo
+Comuna: Coronel
+Comuna: Curanilahue
+Comuna: Florida
+Comuna: Hualpén
+Comuna: Hualqui
+Comuna: Laja
+Comuna: Lebu
+Comuna: Los Álamos
+Comuna: Los Ángeles
+Comuna: Lota
+Comuna: Mulchén
+Comuna: Nacimiento
+Comuna: Negrete
+Comuna: Penco
+Comuna: Quilaco
+Comuna: Quilleco
+Comuna: San Pedro de la Paz
+Comuna: San Rosendo
+Comuna: Santa Bárbara
+Comuna: Santa Juana
+Comuna: Talcahuano
+Comuna: Tirúa
+Comuna: Tomé
+Comuna: Tucapel
+Comuna: Yumbel
+Comuna: Angol
+Comuna: Carahue
+Comuna: Cholchol
+Comuna: Collipulli
+Comuna: Cunco
+Comuna: Curacautín
+Comuna: Curarrehue
+Comuna: Ercilla
+Comuna: Freire
+Comuna: Galvarino
+Comuna: Gorbea
+Comuna: Lautaro
+Comuna: Loncoche
+Comuna: Lonquimay
+Comuna: Los Sauces
+Comuna: Lumaco
+Comuna: Melipeuco
+Comuna: Nueva Imperial
+Comuna: Padre las Casas
+Comuna: Perquenco
+Comuna: Pitrufquén
+Comuna: Pucón
+Comuna: Purén
+Comuna: Renaico
+Comuna: Saavedra
+Comuna: Temuco
+Comuna: Teodoro Schmidt
+Comuna: Toltén
+Comuna: Traiguén
+Comuna: Victoria
+Comuna: Vilcún
+Comuna: Villarrica
+Comuna: Corral
+Comuna: Futrono
+Comuna: La Unión
+Comuna: Lago Ranco
+Comuna: Lanco
+Comuna: Los Lagos
+Comuna: Mariquina
+Comuna: Máfil
+Comuna: Paillaco
+Comuna: Panguipulli
+Comuna: Río Bueno
+Comuna: Valdivia
+Comuna: Ancud
+Comuna: Calbuco
+Comuna: Castro
+Comuna: Chaitén
+Comuna: Chonchi
+Comuna: Cochamó
+Comuna: Curaco de Vélez
+Comuna: Dalcahue
+Comuna: Fresia
+Comuna: Frutillar
+Comuna: Futaleufú
+Comuna: Hualaihué
+Comuna: Llanquihue
+Comuna: Los Muermos
+Comuna: Maullín
+Comuna: Osorno
+Comuna: Palena
+Comuna: Puerto Montt
+Comuna: Puerto Octay
+Comuna: Puerto Varas
+Comuna: Puqueldón
+Comuna: Purranque
+Comuna: Puyehue
+Comuna: Queilén
+Comuna: Quellón
+Comuna: Quemchi
+Comuna: Quinchao
+Comuna: Río Negro
+Comuna: San Juan de la Costa
+Comuna: San Pablo
+Comuna: Aisén
+Comuna: Chile Chico
+Comuna: Cisnes
+Comuna: Cochrane
+Comuna: Coyhaique
+Comuna: Guaitecas
+Comuna: Lago Verde
+Comuna: O’Higgins
+Comuna: Río Ibáñez
+Comuna: Tortel
+Comuna: Antártica
+Comuna: Cabo de Hornos (Ex Navarino)
+Comuna: Laguna Blanca
+Comuna: Natales
+Comuna: Porvenir
+Comuna: Primavera
+Comuna: Punta Arenas
+Comuna: Río Verde
+Comuna: San Gregorio
+Comuna: Timaukel
+Comuna: Torres del Paine

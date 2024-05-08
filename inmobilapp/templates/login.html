@@ -1,0 +1,9 @@
+{% block title %}Página de Inicio{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Iniciar Sesión</button>
+</form>
+{% endblock %}

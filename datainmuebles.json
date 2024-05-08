@@ -1,0 +1,42 @@
+[
+  {
+    "model": "inmobilapp.inmueble",
+    "pk": 1,
+    "fields": {
+      "nombre": "casa",
+      "direccion": "lopes",
+      "descripcion": "lopesa",
+      "imagen": "450_1000.jpeg",
+      "precio": "15000",
+      "comuna": 118,
+      "disponible": true,
+      "m2_construidos": "5000.00",
+      "m2_terreno": "4000.00",
+      "cantidad_estacionamientos": 3,
+      "cantidad_habitaciones": 2,
+      "cantidad_banos": 2,
+      "tipo_de_inmueble": "departamento",
+      "propietario": 3
+    }
+  },
+  {
+    "model": "inmobilapp.inmueble",
+    "pk": 2,
+    "fields": {
+      "nombre": "Casa 2",
+      "direccion": "Zapadores 476",
+      "descripcion": "Casita",
+      "imagen": "_d_ambrosio_07._copy.jpg",
+      "precio": "58900",
+      "comuna": 112,
+      "disponible": true,
+      "m2_construidos": "400.00",
+      "m2_terreno": "1000.00",
+      "cantidad_estacionamientos": 1,
+      "cantidad_habitaciones": 4,
+      "cantidad_banos": 3,
+      "tipo_de_inmueble": "casa",
+      "propietario": 2
+    }
+  }
+]
