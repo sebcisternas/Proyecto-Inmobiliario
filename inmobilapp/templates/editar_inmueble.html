@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Editar Inmueble{% endblock %}
+{%load crispy_forms_tags%}
+{% block content %}
+<div class="container p-4 ">
+    <div class="section-title pt-4 ">
+        <h2>Editar Inmueble</h2>
+        
+    </div>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-6">
+        {{ form.nombre|as_crispy_field }}
+        {{ form.direccion|as_crispy_field }}
+        {{ form.descripcion|as_crispy_field }}
+        {{ form.imagen|as_crispy_field }}
+        {{ form.precio|as_crispy_field }}
+        {{ form.comuna|as_crispy_field }}
+        {{ form.disponible|as_crispy_field }}
+      </div>
+      <div class="col-md-6">
+        {{ form.m2_construidos|as_crispy_field }}
+        {{ form.m2_terreno|as_crispy_field }}
+        {{ form.cantidad_estacionamientos|as_crispy_field }}
+        {{ form.cantidad_habitaciones|as_crispy_field }}
+        {{ form.cantidad_banos|as_crispy_field }}
+        {{ form.tipo_de_inmueble|as_crispy_field }}
+        
+      </div>
+    </div>
+     <div class="row justify-content-center text-center">
+        <div class="col-md-6 ">
+    <button type="submit" class="btn btn-primary">Editar</button>
+    </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

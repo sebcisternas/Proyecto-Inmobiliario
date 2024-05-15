@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
@@ -15,21 +15,30 @@ class Comuna(models.Model):
     def __str__(self):
         return self.nombre
 
-class Usuario(User):
-    TIPO_USUARIO_CHOISES = [
+class Usuario(AbstractUser):
+    TIPO_USUARIO_CHOICES = (
         ('arrendatario', 'Arrendatario'),
         ('arrendador', 'Arrendador'),
-    ]
-    nombres = models.CharField(max_length=50)
-    apellidos = models.CharField(max_length=50)
+    )
     rut = models.CharField(max_length=10, unique=True)
     direccion = models.CharField(max_length=100)
     telefono = models.CharField(max_length=13)
-    tipo_usuario = models.CharField(max_length=20, choices=TIPO_USUARIO_CHOISES)
-    correo_electronico = models.EmailField(unique=True, default='correo@correo.cl') 
+    tipo_usuario = models.CharField(max_length=20, choices=TIPO_USUARIO_CHOICES)
+    
+      # Utilizando los related_name por defecto
+    groups = models.ManyToManyField(
+        'auth.Group',
+        blank=True,
+        help_text='Los grupos a los que pertenece el usuario. '
+    )
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        blank=True,
+        help_text='Los permisos específicos concedidos a este usuario.'
+    )
 
     def __str__(self):
-        return f"{self.nombres} {self.apellidos}"
+        return f"{self.first_name} {self.last_name}"
         
         
         
@@ -62,8 +71,16 @@ class Inmueble(models.Model):
 
 
 class SolicitudArriendo(models.Model):
+    TIPO_ESTADO_CHOISES = [
+        ('pendiente','Pendiente'),
+        ('aceptado','Aceptado'),
+        ('rechazado','Rechazado'),   
+    ]
+     
     arrendatario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     inmueble = models.ForeignKey(Inmueble, on_delete=models.CASCADE)
     mensaje = models.TextField(blank=True)
+    estado =models.CharField(choices=TIPO_ESTADO_CHOISES, default='pendiente')
+    
     def __str__(self):
-        return f"Solicitud de {self.inmueble.nombre} por {self.arrendatario.nombres} {self.arrendatario.apellidos}"    
+        return f"Solicitud de {self.inmueble.nombre} por {self.arrendatario.first_name} {self.arrendatario.last_name}"    

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="section-title text-center pt-4">
+    <h2>Solicitudes de Arriendo</h2>
+</div>
+
+<section class="container mx-auto pt-5">
+    <div class="bg-image h-100" style="background-color: #F5F7FA;">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 p-4">
+                        <div class="card shadow-2-strong" style="background-color: white;">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless mb-0">
+                                        <thead>
+                                            <tr class="table-info ">
+                                                <th scope="col ">Estado</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Mensaje</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for solicitud in solicitudes %}
+                                            <tr class="{% if solicitud.estado == 'aceptado' %}table-success{% elif solicitud.estado == 'pendiente' %}table-warning{% elif solicitud.estado == 'rechazado' %}table-danger{% else %}table-secondary{% endif %}">
+                                                <td>{{ solicitud.estado }}</td>
+                                                <td>{{ solicitud.inmueble.nombre }}</td>
+                                                <td>{{ solicitud.mensaje }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block content %}
+  {% if user.tipo_usuario == 'arrendador' %}
+  
+  <div class="section-title pt-5 align-items-center ">
+    <h2>Tus Inmuebles</h2>
+   
+  </div>
+  <div class="container text-left">
+    
+  <div class="row ">
+      <div class="col-10">
+      
+     </div>
+      <div class="col-2">
+          <a class="btn btn-info rounded text-light mb-2" href="{% url 'alta_inmueble'%}" >Crear Nuevo </a>
+      </div>
+  </div>
+</div>
+  <section class="container pt-2">
+    <div class="bg-image h-100" style="background-color: #F5F7FA;">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 p-4">
+                        <div class="card shadow-2-strong" style="background-color: white;">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-borderless mb-0">
+                                        <thead>
+                                            <tr class="table-primary">
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Descripción</th>
+                                                <th scope="col">Acción</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for inm in inmuebles %}
+                                            <tr>
+                                                <td>{{ inm.nombre }}</td>
+                                                <td>
+                                                    {% if inm.descripcion|length > 100 %}
+                                                    {{ inm.descripcion|slice:":100" }}... <a href="">descripción</a>
+                                                    {% else %}
+                                                    {{ inm.descripcion }}
+                                                    {% endif %}
+                                                </td>
+                                                <td>
+                                                    <div class="d-inline-flex">
+                                                        <a class="btn btn-secondary mr-2 mx-2" href="{% url 'editar_inmueble' inm.id %}" onclick="return confirm('¿Editar?');">Editar</a>
+                                                        <form action="{% url 'eliminar_inmueble' inm.id %}" method="post">
+                                                            {% csrf_token %}
+                                                            <input type="hidden" name="confirmar_eliminacion" value="true">
+                                                            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar este inmueble?');">Eliminar</button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <div class="section-title pt-4 ">
+    <h2>Solicitudes Recibidas</h2>
+   </div>
+<section class="container mx-auto pt-5">
+  <div class="bg-image h-100" style="background-color: #F5F7FA;">
+      <div class="mask d-flex align-items-center h-100">
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-12 p-4">
+                      <div class="card shadow-2-strong" style="background-color: white;">
+                          <div class="card-body">
+                              <div class="table-responsive">
+                                  <table class="table table-borderless mb-0">
+                                      <thead>
+                                          <tr class="table-primary">
+                                              <th scope="col">Estado</th>
+                                              <th scope="col">Propiedad</th>
+                                              <th scope="col">Nombre</th>
+                                              <th scope="col">Mensaje</th>
+                                              <th scope="col">Acción</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          {% for solicitud in solicitudes_recibidas %}
+                                          <tr class="{% if solicitud.estado == 'pendiente' %}table-warning{% elif solicitud.estado == 'aceptado' %}table-success{% elif solicitud.estado == 'rechazado' %}table-danger{% endif %}">
+                                              <td >{{ solicitud.estado }}</td>
+                                              <td> {{solicitud.inmueble.nombre}}
+                                              <td>{{ solicitud.arrendatario.first_name }} {{ solicitud.arrendatario.last_name }}</td>
+                                              <td>{{ solicitud.mensaje }}</td>
+                                              <td>
+                                                  {% if solicitud.estado != 'aceptado' %}
+                                                  <form method="post" action="{% url 'cambiar_estado_solicitud' solicitud.id %}">
+                                                      {% csrf_token %}
+                                                      <button type="submit" name="nuevo_estado" value="aceptado" class="btn btn-success" onclick="return confirm('¿Estás seguro de que quieres Aceptar esta solicitud?')">Aceptar</button>
+                                                      <button type="submit" name="nuevo_estado" value="rechazado" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres Rechazar esta solicitud?')">Rechazar</button>
+                                                  </form>
+                                                  {% endif %}
+                                              </td>
+                                          </tr>
+                                          {% endfor %}
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+  
+  {% endif %}
+{% endblock %}
+

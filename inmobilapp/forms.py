@@ -1,13 +1,13 @@
 from django import forms
 from .models import Usuario, SolicitudArriendo,Inmueble
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
-class RegistroUsuarioForm(forms.ModelForm):
-    class Meta:
+
+class RegistroUsuarioForm(UserCreationForm):
+    class Meta(UserCreationForm):
         model = Usuario
-        fields = ['username', 'password', 'nombres', 'apellidos', 'rut', 'direccion', 'telefono', 'correo_electronico', 'tipo_usuario']
-        widgets = {
-            'password': forms.PasswordInput(),
-        }
+        fields = UserCreationForm.Meta.fields + ('first_name', 'last_name','email','rut', 'direccion', 'telefono', 'tipo_usuario')
+       
         
 class InmuebleForm(forms.ModelForm):
     class Meta:
@@ -18,4 +18,9 @@ class InmuebleForm(forms.ModelForm):
 class SolicitudArriendoForm(forms.ModelForm):
     class Meta:
         model = SolicitudArriendo
-        fields = ['inmueble', 'mensaje']
+        fields = ['mensaje']
+        
+class CustomUserChangeForm(UserChangeForm):
+    class Meta(UserChangeForm.Meta):
+        model = Usuario
+        fields = ['first_name', 'last_name', 'email','direccion','telefono']

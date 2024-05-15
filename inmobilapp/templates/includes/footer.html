@@ -1,0 +1,86 @@
+   
+<footer id="footer">  
+
+  {% if not request.user.is_authenticated %}
+   <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h4>Registrate Ahora</h4>
+            <p>Para poder ver las propiedades y poder contactarte con sus dueños.</p>
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+              <a href="{% url 'registro_usuario' %}" class="btn btn-primary btn-lg" role="button">Registrate</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endif %}
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Inmobil<span>.</span></h3>
+            <p>
+              Calle Los alelies 1115<br>
+              Providencia,Santiago<br>
+              Chile <br><br>
+              <strong>Telefono :</strong> +56 9758575697<br>
+              <strong>Correo :</strong> contacto@inmobil.com<br>
+            </p>
+          </div>
+
+        
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4></h4>
+            <ul>
+              <li> <a href="#"></a></li>
+              <li> <a href="#"></a></li>
+              <li> <a href="#"></a></li>
+              <li> <a href="#"></a></li>
+              <li> <a href="#"></a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'index' %}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">Sobre Nosotros</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'propiedades' %}">Propiedades</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'perfil' %}">Perfil</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4 >Nuestras Redes</h4>
+            <p>Unete para ver más informacion</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Inmobil</span></strong>. Todos los derechos reservados.
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+        Diseñado por Sebastian Cisternas Ocaranza</a>
+      </div>
+    </div>
+  </footer>

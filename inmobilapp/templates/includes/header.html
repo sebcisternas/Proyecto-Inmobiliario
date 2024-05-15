@@ -1,0 +1,54 @@
+<section id="hero" class="d-flex align-items-center">
+  <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h1>Bienvenido a <span>Inmobil</span></h1>
+      <h2>Aquí encontrarás tu lugar de ensueño entre nuestras exclusivas propiedades.</h2>
+      {% if not request.user.is_authenticated %}
+      <a href="{% url 'registro_usuario' %}" class="btn-get-started scrollto">Registrate</a>
+     {% endif %}
+    
+        <button type="button" class="btn btn-watch-video video-btn" data-src="https://www.youtube.com/embed/6CesFj_9LYo" data-bs-toggle="modal" data-bs-target="#myModal">
+            Mirar Video
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- 16:9 aspect ratio -->
+                <div class="ratio ratio-16x9">
+                  <iframe class="embed-responsive-item" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>   
+  
+  </div>
+
+  <script>
+    // Declare a variable to store the video source
+    let videoSrc;
+  
+    // Add click event listener to all elements with class "video-btn"
+    document.querySelectorAll('.video-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        // Get the video source from the data-src attribute
+        videoSrc = button.dataset.src;
+      });
+    });
+  
+    // Add event listener for when the modal is opened
+    document.getElementById('myModal').addEventListener('shown.bs.modal', () => {
+      // Update the video source with autoplay and other options
+      document.getElementById('video').src = videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0";
+    });
+  
+    // Add event listener for when the modal is closed
+    document.getElementById('myModal').addEventListener('hide.bs.modal', () => {
+      // Stop the video by resetting the source
+      document.getElementById('video').src = videoSrc;
+    });
+  </script>
+</section>

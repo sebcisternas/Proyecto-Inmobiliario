@@ -1,9 +1,50 @@
-{% block title %}Página de Inicio{% endblock %}
+{% extends 'base.html' %}
 
+{% block title %}Página de Inicio{% endblock %}
+{%block 'link' %} {% include "includes/link.html" %}{% endblock %}
+
+ 
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Iniciar Sesión</button>
-</form>
+<div class="container pt-4">
+    <div class="row pt-4">
+        
+    </div>   
+</div>
+
+<div class="container pt-4">
+    <div class="row pt-4">
+        
+    </div>   
+</div>
+
+<div class="wrapper fadeInDown">
+  <div id="formContent" class="login-form"> <!-- Agrega una clase específica -->
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <h2>Iniciar Sesión</h2>
+    </div>
+
+    <!-- Login Form -->
+    <form method="post">
+      {% csrf_token %}
+      <input type="text" id="login" class="fadeIn second" name="username" placeholder="Usuario" required>
+      <input type="password" id="password" class="fadeIn second mt-4" name="password" placeholder="Contraseña" required>
+      <input type="submit" class="fadeIn fourth mt-4" value="Iniciar Sesión">
+    </form>
+
+    <!-- Remind Passowrd -->
+  
+  </div>
+</div>
+
+
+    <div class="container mt-4 pt-4">
+        <div class="row pt-4">
+            <img src="/static/img/footer.png" alt="Imagen con borde redondo" style="border-radius: 15px;">
+        </div>   
+    </div>
+
+{% endblock %}
+
+{% block footer %}
 {% endblock %}

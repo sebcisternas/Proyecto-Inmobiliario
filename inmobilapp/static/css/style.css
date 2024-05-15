@@ -191,7 +191,7 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 40px;
+  max-height: 70px;
 }
 
 .scrolled-offset {
@@ -461,7 +461,7 @@ h6 {
 #hero {
   width: 100%;
   height: 75vh;
-  background: url("../img/hero-bg.jpg") top left;
+  background: url("/static/img/fondo_header.jpeg") top left;
   background-size: cover;
   position: relative;
 }
@@ -516,20 +516,26 @@ h6 {
 
 #hero .btn-get-started:hover {
   background: #247cf0;
+  color: #000000;
 }
 
 #hero .btn-watch-video {
-  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+ 
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 25px;
+  border-radius: 4px;
   transition: 0.5s;
-  margin-left: 25px;
-  color: #222222;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
+  color: #fff;
+  background: #ea1010;
 }
 
 #hero .btn-watch-video i {
-  color: #106eea;
+  color: #ffffff;
   font-size: 32px;
   transition: 0.3s;
   line-height: 0;
@@ -537,7 +543,7 @@ h6 {
 }
 
 #hero .btn-watch-video:hover {
-  color: #106eea;
+  color: #000000;
 }
 
 #hero .btn-watch-video:hover i {
@@ -593,10 +599,11 @@ section {
 .section-title {
   text-align: center;
   padding-bottom: 30px;
+  
 }
 
 .section-title h2 {
-  font-size: 13px;
+  font-size: 30px;
   letter-spacing: 1px;
   font-weight: 700;
   padding: 8px 20px;
@@ -692,7 +699,7 @@ section {
   position: relative;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  box-shadow: 0 0 29px 0 rgba(18, 195, 65, 0.12);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   z-index: 1;
@@ -711,7 +718,7 @@ section {
 }
 
 .featured-services .icon-box:hover::before {
-  background: #106eea;
+  background: #d40707;
   top: 0;
   border-radius: 0px;
 }
@@ -721,24 +728,28 @@ section {
 }
 
 .featured-services .icon i {
+  color: white;
   font-size: 48px;
   line-height: 1;
-  color: #106eea;
+ 
   transition: all 0.3s ease-in-out;
 }
 
 .featured-services .title {
+  color: #ffffff;
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 18px;
 }
 
 .featured-services .title a {
-  color: #111;
+  color: #ffffff;
 }
 
 .featured-services .description {
   font-size: 15px;
+  font-weight: bold;
+  color: #fff;
   line-height: 28px;
   margin-bottom: 0;
 }
@@ -966,7 +977,7 @@ section {
 }
 
 .services .icon-box:hover .icon {
-  border-color: #106eea;
+  border-color: #06387a;
 }
 
 /*--------------------------------------------------------------
@@ -1805,4 +1816,30 @@ section {
     text-align: center;
     padding: 2px 0;
   }
+}
+
+/*Modal video */
+
+
+.modal-dialog {
+      max-width: 800px;
+      margin: 30px auto;
+  }
+
+.modal-body {
+  position:relative;
+  padding:0px;
+}
+.btn-close {
+  position:absolute;
+  padding-left: 5px;
+  right:-30px;
+  top:0;
+}
+
+.modal-image {
+  max-height: 400px; /* Altura máxima de la imagen */
+  width: auto; /* Ancho automático para mantener la proporción de aspecto */
+  margin: 0 auto; /* Centrar horizontalmente */
+  display: block; /* Asegurar que la imagen se comporte como bloque */
 }

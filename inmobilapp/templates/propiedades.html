@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block header  %}{% endblock  %}
+{% block content %}
+{% load static %}
+
+<div class="section-title mt-4 pt-4">
+  <h2>Propiedades </h2>
+
+</div>
+<div class="row ">
+<form method="GET" action="{% url 'propiedades' %}">
+  <div class="row mx-auto justify-content-center align-items-center">
+      <div class="col-md-2 mx-4">
+          <label for="region">Región:</label>
+          <div class="dropdown">
+              <select class="btn btn-primary dropdown-toggle" name="region" id="region" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <option value="">Seleccionar Región</option>
+                  {% for region in regiones %}
+                      <option value="{{ region.id }}">{{ region.nombre }}</option>
+                  {% endfor %}
+              </select>
+              <div class="dropdown-menu" aria-labelledby="region">
+                  <!-- Opciones de la región -->
+              </div>
+          </div>
+      </div>
+      <div class="col-md-2">
+          <label for="comuna">Comuna:</label>
+          <div class="dropdown">
+              <select class="btn btn-success dropdown-toggle" name="comuna" id="comuna" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <option value="">Seleccionar Comuna</option>
+                  {% for comuna in comunas %}
+                      <option value="{{ comuna.id }}">{{ comuna.nombre }}</option>
+                  {% endfor %}
+              </select>
+              <div class="dropdown-menu" aria-labelledby="comuna">
+                  <!-- Opciones de la comuna -->
+                  {% for comuna in comunas %}
+                      <a class="dropdown-item" href="#">{{ comuna.nombre }}</a>
+                  {% endfor %}
+              </div>
+          </div>
+      </div>
+      <div class="col-md-2 pt-3">
+          <button class="btn btn-danger" type="submit">Filtrar</button>
+      </div>
+  </div>
+</form>
+</div>
+
+<section class="container mx-auto pt-5">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {% for inm in inmuebles %}
+      <div class="col mb-4">
+        <div class="card h-100">
+          <img class="card-img-top img-fluid" style="object-fit: cover; height: 200px;" src="{{inm.imagen.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{ inm.nombre }}</h5>
+            <p class="card-text text-justify">
+                {% if inm.descripcion|length > 50 %}
+                <i class="fa-solid fa-comment" style="margin-right: 2px;"></i> {{ inm.descripcion|slice:":50" }}
+                {% else %}
+                <i class="fa-solid fa-comment" style="margin-right: 2px;"></i>    {{ inm.descripcion }}
+                {% endif %}
+            </p>
+            <p class="card-text text-justify"><i class="fa-solid fa-location-dot" style="margin-right: 5px;"></i> {{inm.comuna}}</p>
+            <p class="card-text text-justify"> <i class="fa-solid fa-dollar-sign" style="margin-right: 6px;"></i>{{inm.precio}}</p>
+          </div>
+          <div class="card-footer  text-center">
+            <a class="btn btn-primary mt-2" href="#" data-bs-toggle="modal" data-bs-target="#detalleModal{{ inm.id }}">Detalle</a>
+            {% if user.is_authenticated and user.tipo_usuario == 'arrendatario' %}
+            <button type="button" class="btn btn-secondary mt-2" data-bs-toggle="modal" data-bs-target="#solicitudModal{{ inm.id }}">Generar Solicitud</button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="detalleModal{{ inm.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{ inm.nombre }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row align-items-center">
+                <div class="col-md-6 text-center">
+                  <img src="{{ inm.imagen.url }}" class="img-fluid rounded p-4" alt="Imagen del inmueble">
+                </div>
+                <div class="col-md-6 mt-4">
+                  <p><strong>Dirección:</strong> {{ inm.direccion }}</p>
+                  <p><strong>Precio:</strong> {{ inm.precio }}</p>
+                  <p><strong>Comuna:</strong> {{ inm.comuna }}</p>
+                  <p><strong>Metros cuadrados construidos:</strong> {{ inm.m2_construidos }}</p>
+                  <p><strong>Metros cuadrados de terreno:</strong> {{ inm.m2_terreno }}</p>
+                  <p><strong>Estacionamientos:</strong> {{ inm.cantidad_estacionamientos }}</p>
+                  <p><strong>Habitaciones:</strong> {{ inm.cantidad_habitaciones }}</p>
+                  <p><strong>Baños:</strong> {{ inm.cantidad_banos }}</p>
+                  <p><strong>Tipo de inmueble:</strong> {{ inm.get_tipo_de_inmueble_display }}</p>
+                  <p><strong>Propietario:</strong> {{ inm.propietario }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     <!-- Modal de solicitud -->
+  <div class="modal fade " id="solicitudModal{{ inm.id }}" tabindex="-1" aria-labelledby="solicitudModalLabel{{ inm.id }}" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content p-4">
+        <div class="modal-header text-center justify-content-center ">
+          <h5 class="modal-title " id="solicitudModalLabel{{ inm.id }}">Generar Solicitud de Arriendo para {{inm.nombre}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {%load crispy_forms_tags%}
+          <form method="post">
+            {% csrf_token %}
+            {{ form_solicitud|crispy }}
+            <input type="hidden" name="inmueble_id" value="{{ inm.id }}">
+            <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+    {% endfor %}  
+  </div>
+</section>
+
+{% endblock %}
+

@@ -47,8 +47,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'inmobilapp'
+    'inmobilapp',
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
+#Crispy forms function
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+USE_I18N = True
+USE_L10N = True
+LANGUAGE_CODE = 'es'
+#endcrispy
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -114,11 +130,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'inmobilapp.Usuario'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 TIME_ZONE = 'UTC'
 

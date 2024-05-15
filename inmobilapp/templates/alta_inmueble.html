@@ -1,12 +1,54 @@
 {% extends 'base.html' %}
 
-{% block title %}Página de Inicio{% endblock %}
+{% block title %}Página de Inicio{% endblock title %}
+
+{% block header %}
+
+{% endblock  %}
+
 
 {% block content %}
-<h2>Alta de Inmueble</h2>
-<form method="POST" enctype="multipart/form-data">
+{%load crispy_forms_tags %}
+<div class="container">
+    <div class="section-title pt-4 ">
+        <h2>Crear Inmueble</h2>
+        
+    </div>
+  <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Guardar</button>
-</form>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-header">Datos Generales</div>
+          <div class="card-body">
+            {{ form.nombre|as_crispy_field }}
+            {{ form.direccion|as_crispy_field }}
+            {{ form.descripcion|as_crispy_field }}
+            {{ form.imagen|as_crispy_field }}
+            {{ form.precio|as_crispy_field }}
+            {{ form.comuna|as_crispy_field }}
+            {{ form.disponible|as_crispy_field }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-header">Datos de Construcción</div>
+          <div class="card-body">
+            {{ form.m2_construidos|as_crispy_field }}
+            {{ form.m2_terreno|as_crispy_field }}
+            {{ form.cantidad_estacionamientos|as_crispy_field }}
+            {{ form.cantidad_habitaciones|as_crispy_field }}
+            {{ form.cantidad_banos|as_crispy_field }}
+            {{ form.tipo_de_inmueble|as_crispy_field }}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>
+</div>
 {% endblock %}

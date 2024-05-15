@@ -1,19 +1,60 @@
+
 {% extends 'base.html' %}
 
-{% block title %}Página de Inicio{% endblock %}
+{%block 'link' %}
+{% endblock %}
+{% block header %}
+    <header id="hero" class="d-flex align-items-center" style="background: url(/static/img/fondo_header.jpeg;background-size: cover;) top left">
+      {% include "includes/header.html" %}
+    </header><!-- End Header -->
+ {% endblock %}
 
 {% block content %}
-    <h2>Bienvenido a mi sitio web!</h2>
-    <p>Este es el contenido de la página de inicio.</p>
 
-    {% for inm in inmuebles %}
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="media/{{inm.imagen}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{inm.nombre}}</h5>
-          <p class="card-text">{{inm.descripcion}}</p>
-          <li><a href="{% url 'detalle' inm.id %}">detalle del inmueble</a></li>
+<div class="section-title mt-5">
+  <h2>Nuestras Propiedades</h2>
+  
+  <p>Descubre nuestro exclusivo catálogo de propiedades, donde cada espacio está diseñado para convertirse en el hogar 
+    perfecto que siempre has deseado. Desde pintorescas parcelas hasta elegantes departamentos y acogedoras casas, te invitamos 
+    a explorar y encontrar tu lugar ideal para vivir tus sueños.</p>
+</div>
+
+<section id="featured-services" class="featured-services">
+  <div class="container " data-aos="fade-up">
+
+    <div class="row text-center align-items-center justify-content-center">
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box" data-aos="fade-up" data-aos-delay="100" style="background: url('/static/img/parcela1.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <div class="icon"><i class="fa-solid fa-tree"></i></i></div>
+          <h4 class="title">Parcelas</h4>
+          <p class="description">Espacio de ensueño para construir tu hogar, rodeado de naturaleza y tranquilidad, lugares tranquilos y rodeado de arboles .</p>
         </div>
       </div>
-    {% endfor %}
-{% endblock %}
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box" data-aos="fade-up" data-aos-delay="100" style="background: url('/static/img/casa1.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <div class="icon"><i class="fa-solid fa-house"></i></i></div>
+          <h4 class="title"><a href="">Casas</a></h4>
+          <p class="description">Encanto y funcionalidad se unen en nuestras acogedoras casas, tu refugio perfecto para crear memorias inolvidables.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div class="icon-box" data-aos="fade-up" data-aos-delay="100" style="background: url('/static/img/depto1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+          <div class="icon"><i class="fa-solid fa-building"></i></div>
+          <h4 class="title"><a href="">Departamentos</a></h4>
+          <p class="description">Estilo contemporáneo y comodidad urbana se fusionan en este moderno departamento con vistas impresionantes.</p>
+        </div>
+      </div>
+
+    
+
+    </div>
+
+  </div>
+</section><!-- End Featured Services Section -->
+
+       
+
+{% endblock  %}

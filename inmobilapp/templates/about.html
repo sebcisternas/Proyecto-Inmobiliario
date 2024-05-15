@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block header  %}{% endblock  %}
+{% block content %}
+{% load static %}
+<section id="about" class="about section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Sobre Nosotros</h2>
+        <h3>Encuentra lo que necesitas en <span>Inmobil</span></h3>
+        <p>Buscamos tu hogar.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
+          <img src="/static/img/about.png" class="img-fluid" alt="" style="min-width: 90%;">
+        </div>
+        
+        <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <h3>Mision</h3>
+          <p class="fst-italic">
+            En Inmobil, nuestra misión es hacer que el proceso de compra y venta de propiedades sea simple, eficiente y gratificante. Somos una plataforma digital que conecta a propietarios con potenciales compradores, ofreciendo una experiencia sin igual en el mundo inmobiliario.
+
+          </p>
+          <ul>
+            <li>
+              <i class="bx bx-store-alt"></i>
+              <div>
+                <h5>Nuestro equipo está comprometido con la excelencia y la satisfacción del cliente en cada paso del camino. </h5>
+                
+              </div>
+            </li>
+            <li>
+              <i class="bx bx-images"></i>
+              <div>
+                <h5>Con nuestra innovadora aplicación web, facilitamos el proceso de publicar y promocionar propiedades de manera efectiva</h5>
+               
+              </div>
+            </li>
+          </ul>
+          <h3>Vision</h3>
+          <p>
+            En Inmobil, aspiramos a ser líderes en la revolución digital del mercado inmobiliario, ofreciendo una plataforma 
+            innovadora y de confianza donde propietarios y compradores encuentren soluciones efectivas y gratificantes para sus necesidades.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+   
+{% endblock %}

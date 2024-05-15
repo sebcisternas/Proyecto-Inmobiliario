@@ -1,0 +1,47 @@
+<header id="header" class="d-flex align-items-center">
+<div class="container d-flex align-items-center justify-content-between">
+    
+ 
+    <div class="logo">
+      <img src="/static/img/logo.png" alt="">
+    </div>
+
+   
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo"><img src="static/img/logo.png" alt=""></a>-->
+
+    <nav id="navbar" class="navbar">
+        
+        <ul>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'about' %}">Sobre Nosotros</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'propiedades' %}">Propiedades</a></li>
+          
+          {% if user.is_authenticated %}
+          <li class="dropdown"><a href="#"><span style="text-transform: capitalize;">{{ user.username }}</span> <i class="fa-solid fa-caret-down"></i></a>
+            <ul>
+              <li><a class="nav-link scrollto" href="{% url 'perfil' %}">Perfil</a></li>
+              <li><a class="nav-link scrollto" aria-current="page" href="{% url 'dashboard' %}">Dashboard</a></li></a></li>
+            </ul>
+          </li>
+          
+          
+          {% endif %}
+                
+         
+          {% if request.user.is_authenticated %}
+
+          <li><a href="{% url 'logout' %}" class="btn btn-danger text-light btn-lg mx-auto"><i class="fa-solid fa-right-from-bracket" style="margin-right: 5px;"></i>   Logout</a></li>
+           <!-- Muestra el nombre completo del usuario -->
+          
+          
+          {% else %}
+         
+          <li><a href="{% url 'login' %}" class="btn btn-primary text-light btn-lg mx-auto"><i class="fa-solid fa-right-to-bracket" style="margin-right: 5px;"></i>Iniciar sesión</a></li>
+          {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+    
+     </div>
+    </header>
