@@ -30,6 +30,7 @@ from inmobilapp.views import (
     actualizar_inmueble,
     actualizar_usuario,
     
+    
 )
 
 from django.contrib.auth.views import LoginView, LogoutView
@@ -65,5 +66,4 @@ urlpatterns = [
     
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 

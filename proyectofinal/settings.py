@@ -32,7 +32,8 @@ SECRET_KEY = 'django-insecure-#ldqt)4u*vm)!t6_v6u-mbg%cu3!j_x1r9m_i0kjc*7j456btq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','proyecto-inmobiliario.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://proyecto-inmobiliario.onrender.com']
 
 LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'  # URL a la que se redirige si un usuario no está autenticado y trata de acceder a una vista protegida

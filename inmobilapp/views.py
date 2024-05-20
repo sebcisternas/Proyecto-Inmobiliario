@@ -192,3 +192,4 @@ def cambiar_estado_solicitud(request, solicitud_id):
             solicitud.estado = nuevo_estado
             solicitud.save()
     return redirect('dashboard')
+
